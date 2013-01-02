@@ -5,6 +5,8 @@ category: Coding
 summary: A quick overview of adding tags to a Jekyll-powered blog.
 ---
 
+**Notice:** Github doesn't support jekyll plugins.
+
 ## The Problem
 
 I shouldn't say that Jekyll doesn't support tagging. It does. In the sense that you can add tags to a post.
@@ -93,7 +95,7 @@ In the tag_gen file. put this:
           site.pages << index
         end
       end
-  	end
+    end
 
 **What that does:** Essentially, it creates a directory (folder) for each tag in your blog, and creates an index.html file in it. In that index.html file, it plugs in that template we just set up a few minutes ago. For the page title, it'll combine the variables "tag_title_prefix" and "tag_title_suffix", flanking the tag itself.
 
