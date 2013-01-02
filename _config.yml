@@ -1,4 +1,6 @@
 auto: true
+save: true
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "assets"]
 markdown: rdiscount
 permalink: /:year/:month/:day/:title
 rdiscount extensions: [smart]
