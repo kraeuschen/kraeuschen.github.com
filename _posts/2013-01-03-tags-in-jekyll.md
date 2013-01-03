@@ -80,3 +80,9 @@ In the tag_gen file. put this:
         end
       end
     end
+
+## The magic happens
+
+Jekyll needs a restart, if already running. After this, it creates new index files on _site/tags folder.
+
+For github we need to commit this subdir.
