@@ -1,6 +1,6 @@
 ---
 layout: layout
-title: Testpage
+title: Blog
 ---
 
 {% for post in site.posts offset: 0 limit: 50 %}
@@ -8,14 +8,18 @@ title: Testpage
     <div class="span7">
         <h4><strong><a href="{{ post.url }}">{{ post.title }}</a></strong></h4>
         <p>
-            {{ post.summary }}
+            <i class="icon-calendar"></i> {{ post.date | date: "%B %e, %Y" }}
         </p>
         <p>
-            <i class="icon-calendar"></i> {{ post.date | date: "%B %e, %Y" }}
-            | <i class="icon-tags"></i> Tags :{% for tag in post.tags %} <a href="/tags/{{ tag }}" rel="tooltip" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="label label-info">{{ tag }}</span></a>  {% if forloop.last != true %} {% endif %} {% endfor %}
+            {{ post.content }}
         </p>
-        <p><a href="{{ post.url }}">Read more</a></p>
+        <p>
+           <i class="icon-tags"></i> Tags :{% for tag in post.tags %} <a href="/tags/{{ tag }}" rel="tooltip" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="label label-info">{{ tag }}</span></a>  {% if forloop.last != true %} {% endif %} {% endfor %}
+        </p>
         <hr>
     </div>
 </div>
 {% endfor %}
+
+<p><a href="archive.html">Archive</a></p>
+
