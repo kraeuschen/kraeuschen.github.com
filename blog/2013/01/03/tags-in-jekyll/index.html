@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Octopress blog</title>
+  <title>Tags In Jekyll - Octopress blog</title>
   <meta name="author" content="Jan Krause">
 
   
-  <meta name="description" content="After knowing, that github doesn&#8217;t support jekyll plugin and copying the tags
-dir from _site to main directory.
-">
+  <meta name="description" content="Notice: Github doesn&#8217;t support jekyll plugins. Using Tags Add tags on frontmatter: tags: jekyll code Create two files: _layouts/tag_index.html &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ dir from _site to main directory.
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://kraeuschen.github.com/">
+  <link rel="canonical" href="http://kraeuschen.github.com/blog/2013/01/03/tags-in-jekyll/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -64,52 +62,12 @@ dir from _site to main directory.
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/01/04/using-octopress/">Using Octopress</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-04T12:17:00+01:00" pubdate data-updated="true">Jan 4<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>After knowing, that github doesn&#8217;t support jekyll plugin and copying the tags
-dir from _site to main directory.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/03/using-rake/">Using Rake</a></h1>
+      <h1 class="entry-title">Tags in Jekyll</h1>
     
     
       <p class="meta">
@@ -132,63 +90,7 @@ dir from _site to main directory.</p>
   </header>
 
 
-  <div class="entry-content"><p>You can use rake for creating sites and posts. This file ist adopted from <a href="http://jekyllbootstrap.com">jekyll-boostrap</a>.</p>
-
-<h2>Starting server</h2>
-
-<pre><code>rake preview
-</code></pre>
-
-<h2>Create page</h2>
-
-<pre><code>rake page name="about.md"
-</code></pre>
-
-<p>or</p>
-
-<pre><code>rake page name="about/index.html"
-</code></pre>
-
-<h2>Create a post</h2>
-
-<pre><code>rake post title="A Title" [date="2012-02-09"]
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/03/tags-in-jekyll/">Tags in Jekyll</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-03T00:00:00+01:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>Notice:</strong> Github doesn&#8217;t support jekyll plugins.</p>
+<div class="entry-content"><p><strong>Notice:</strong> Github doesn&#8217;t support jekyll plugins.</p>
 
 <h2>Using Tags</h2>
 
@@ -273,83 +175,16 @@ end
 
 <p>For github we need to commit this subdir.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/02/bootstrapping-github-pages-with-jekyll/">How to Setup an Twitter Bootstrap With Jekyll</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Jan Krause</span></span>
 
-<time datetime="2013-01-02T00:00:00+01:00" pubdate data-updated="true">Jan 2<span>nd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Twitter Bootstrap is a nice thing, but also the reason, why i couldn&#8217;t use jekyll-bootstrap and did all the stuff recursivly on my own.</p>
-
-<p><strong> Spoiler </strong> The javascript files of bootstrap leadings to a &#8220;page could not be rendered&#8221; error on github.
-I guess the reason are comments in the js files, but i hasn&#8217;t checked it.</p>
-
-<h2>Download bootstrap</h2>
-
-<p>So go to the <a href="http://twitter.github.com/bootstrap/">bootstrap homepage</a> and download the latest version.
-You should unpack the file and copy all data into a dir called assets. Then remove all non-minifed js files and everything
-works fine after pushing your commit.</p>
-
-<h2>Change pathes on your layout</h2>
-
-<p>Now its time to change your layout file and add the bootstrap css/js files. Use the grid-system if you want for all pages.</p>
-
-<pre><code>&lt;link href="/assets/css/bootstrap.css" rel="stylesheet"&gt;
-&lt;link href="/assets/css/docs.css" rel="stylesheet"&gt;
-&lt;link href="/assets/css/bootstrap-responsive.css" rel="stylesheet"&gt;
-
-&lt;div class="container"&gt;&lt;/div&gt;
-
-&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
-&lt;script src="/assets/js/bootstrap.min.js"&gt;&lt;/script&gt;
-</code></pre>
-
-<p>Don&#8217;t forget using the right jquery version.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/01/setup-github-pages/">How to Setup an Github Based Blog</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -361,76 +196,40 @@ works fine after pushing your commit.</p>
   
 
 
-<time datetime="2013-01-01T00:00:00+01:00" pubdate data-updated="true">Jan 1<span>st</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-01-03T00:00:00+01:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/coding/'>coding</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><h2>Create repo</h2>
-
-<p>Go to the Github Dashboard and create a new repository named USERNAME.github.com
-It has to be exactly the same name as your username.</p>
-
-<p>You can use the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> with templates
-or setup an <a href="https://help.github.com/articles/creating-project-pages-manually">page manually</a>.</p>
-
-<p>I used the page generator for the beginnin and removed all content except the index.html</p>
-
-<h2>Setup jekyll structure</h2>
-
-<p>Follow the instructions on the <a href="https://help.github.com/articles/using-jekyll-with-pages">github manual</a>.</p>
-
-<p>You will need to install some gems on your machine and setup a <a href="https://github.com/mojombo/jekyll/wiki/usage">directory structure</a></p>
-
-<p>Change the _config.yml and set some <a href="https://github.com/mojombo/jekyll/wiki/Configuration">config vars</a>:</p>
-
-<pre><code>auto: true
-pygments: true
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-markdown: rdiscount
-permalink: /:year/:month/:day/:title
-rdiscount extensions: [smart]
-</code></pre>
-
-<p>If you run</p>
-
-<pre><code>jekyll --server
-</code></pre>
-
-<p>it spawns an webserver on http://0.0.0.0:4000/.</p>
-
-<h2>Using markdown</h2>
-
-<p>Set your markdown engine in your _config.yml.</p>
-
-<p>Jekyll will parse .md files and creates html. You can add posts in the _posts directory,
-with your permalink-scheme.</p>
-
-<p>e.g create and file on posts/2013-01-01-setup-github-pages.md with content.</p>
-
-<pre><code>This is a test post writen in markdown. To learn more about markdown check
-out the [documentation](http://daringfireball.net/projects/markdown/).
-</code></pre>
-
-<p>See the result on http://0.0.0.0:4000/2013/01/01/setup-github-pages/</p>
-
-<p>This is a test post writen in markdown. To learn more about markdown check
-out the <a href="http://daringfireball.net/projects/markdown/">documentation</a>.</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kraeuschen.github.com/blog/2013/01/03/tags-in-jekyll/" data-via="kraeuschen" data-counturl="http://kraeuschen.github.com/blog/2013/01/03/tags-in-jekyll/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/02/bootstrapping-github-pages-with-jekyll/" title="Previous Post: How to setup an twitter bootstrap with jekyll">&laquo; How to setup an twitter bootstrap with jekyll</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/03/using-rake/" title="Next Post: Using Rake">Using Rake &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -463,7 +262,7 @@ out the <a href="http://daringfireball.net/projects/markdown/">documentation</a>
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/kraeuschen">@kraeuschen</a> on GitHub
@@ -493,7 +292,7 @@ out the <a href="http://daringfireball.net/projects/markdown/">documentation</a>
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -521,6 +320,7 @@ out the <a href="http://daringfireball.net/projects/markdown/">documentation</a>
 
   
 </aside>
+
 
     </div>
   </div>

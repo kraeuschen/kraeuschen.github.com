@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Octopress blog]]></title>
-  <link href="http://kraeuschen.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: coding | Octopress blog]]></title>
+  <link href="http://kraeuschen.github.com/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://kraeuschen.github.com/"/>
   <updated>2013-01-08T23:37:48+01:00</updated>
   <id>http://kraeuschen.github.com/</id>
@@ -12,16 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Using Octopress]]></title>
-    <link href="http://kraeuschen.github.com/blog/2013/01/04/using-octopress/"/>
-    <updated>2013-01-04T12:17:00+01:00</updated>
-    <id>http://kraeuschen.github.com/blog/2013/01/04/using-octopress</id>
-    <content type="html"><![CDATA[<p>After knowing, that github doesn&#8217;t support jekyll plugin and copying the tags
-dir from _site to main directory.</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Using Rake]]></title>
@@ -57,7 +47,7 @@ dir from _site to main directory.</p>
     <link href="http://kraeuschen.github.com/blog/2013/01/03/tags-in-jekyll/"/>
     <updated>2013-01-03T00:00:00+01:00</updated>
     <id>http://kraeuschen.github.com/blog/2013/01/03/tags-in-jekyll</id>
-    <content type="html"><![CDATA[<p><strong>Notice:</strong> Github doesn&#8217;t support jekyll plugins.</p>
+    <content type="html"><![CDATA[<p><strong>Notice:</strong> Github doesn't support jekyll plugins.</p>
 
 <h2>Using Tags</h2>
 
@@ -81,7 +71,7 @@ dir from _site to main directory.</p>
 <pre><code>---
 layout: default
 ---
-&lt;h2 class="post_title"&gt;Tags In Jekyll&lt;/h2&gt;
+&lt;h2 class="post_title"&gt;Category: coding&lt;/h2&gt;
 &lt;ul&gt;
   {.% for post in site.posts %}
   {.% for tag in post.tags %}
@@ -90,7 +80,7 @@ layout: default
     &lt;time style="color:#666;font-size:11px;" datetime=''&gt;&lt;/time&gt; &lt;a class="archive_list_article_link" href=''&gt;&lt;/a&gt;
     &lt;p class="summary"&gt;
     &lt;ul class="tag_list"&gt;
-
+      
     &lt;/ul&gt;
   &lt;/li&gt;
   {.% endif %}
@@ -149,10 +139,10 @@ end
     <link href="http://kraeuschen.github.com/blog/2013/01/02/bootstrapping-github-pages-with-jekyll/"/>
     <updated>2013-01-02T00:00:00+01:00</updated>
     <id>http://kraeuschen.github.com/blog/2013/01/02/bootstrapping-github-pages-with-jekyll</id>
-    <content type="html"><![CDATA[<p>Twitter Bootstrap is a nice thing, but also the reason, why i couldn&#8217;t use jekyll-bootstrap and did all the stuff recursivly on my own.</p>
+    <content type="html"><![CDATA[<p>Twitter Bootstrap is a nice thing, but also the reason, why i couldn't use jekyll-bootstrap and did all the stuff recursivly on my own.</p>
 
-<p><strong> Spoiler </strong> The javascript files of bootstrap leadings to a &#8220;page could not be rendered&#8221; error on github.
-I guess the reason are comments in the js files, but i hasn&#8217;t checked it.</p>
+<p><strong> Spoiler </strong> The javascript files of bootstrap leadings to a "page could not be rendered" error on github.
+I guess the reason are comments in the js files, but i hasn't checked it.</p>
 
 <h2>Download bootstrap</h2>
 
@@ -174,7 +164,7 @@ works fine after pushing your commit.</p>
 &lt;script src="http://kraeuschen.github.com/assets/js/bootstrap.min.js"&gt;&lt;/script&gt;
 </code></pre>
 
-<p>Don&#8217;t forget using the right jquery version.</p>
+<p>Don't forget using the right jquery version.</p>
 ]]></content>
   </entry>
   
