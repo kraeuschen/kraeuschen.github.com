@@ -1,24 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Octopress blog]]></title>
-  <link href="http://kraeuschen.github.com/atom.xml" rel="self"/>
-  <link href="http://kraeuschen.github.com/"/>
-  <updated>2013-01-09T03:09:55+01:00</updated>
-  <id>http://kraeuschen.github.com/</id>
-  <author>
-    <name><![CDATA[Jan Krause]]></name>
-    <email><![CDATA[info@kraeuschen.de]]></email>
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Adding the Tags Plugin to Octopress - Octopress blog</title>
+  <meta name="author" content="Jan Krause">
 
   
-  <entry>
-    <title type="html"><![CDATA[Adding the Tags Plugin to Octopress]]></title>
-    <link href="http://kraeuschen.github.com/blog/2013/01/09/adding-the-tags-plugin-to-octopress/"/>
-    <updated>2013-01-09T02:00:00+01:00</updated>
-    <id>http://kraeuschen.github.com/blog/2013/01/09/adding-the-tags-plugin-to-octopress</id>
-    <content type="html"><![CDATA[<p>This is an incomplete guide howto install the tags plugin with octopress.</p>
+  <meta name="description" content="This is an incomplete guide howto install the tags plugin with octopress. There are some differences between this version and the raw version. Set &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kraeuschen.github.com/blog/2013/01/09/adding-the-tags-plugin-to-octopress/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Octopress blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Octopress blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kraeuschen.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Adding the Tags Plugin to Octopress</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-09T02:00:00+01:00" pubdate data-updated="true">Jan 9<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This is an incomplete guide howto install the tags plugin with octopress.</p>
 
 <p>There are some differences between this version and the raw version.</p>
 
@@ -241,270 +313,191 @@ file too.</p>
 </code></pre>
 
 <p>because it has to change all existing posts.</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[Using Octopress]]></title>
-    <link href="http://kraeuschen.github.com/blog/2013/01/04/using-octopress/"/>
-    <updated>2013-01-04T12:17:00+01:00</updated>
-    <id>http://kraeuschen.github.com/blog/2013/01/04/using-octopress</id>
-    <content type="html"><![CDATA[<p>After knowing, that github doesn&#8217;t support jekyll plugin and copying the tags
-dir from _site to main directory before each deploy, i was looking for an
-idea to solve this problem.</p>
 
-<p>My idea was to create an raw branch for all jekyll based files und plugins and
-another branch with the content of the completly rendered page, which is rendered
-in the _site folder.</p>
+<span class="byline author vcard">Posted by <span class="fn">Jan Krause</span></span>
 
-<p>By Extending the Rakefile i could make an deploy command, which pushes the
-_site content to the master branch. Errors like the Twitter Boostrap thing could
-be avoided by using an .nojekyll file on this branch.</p>
+      
 
-<p>But then i found octopress, which exactly works this way and comes up with
-a lot of cool plugins.</p>
 
-<p>Read the <a href="http://octopress.org/docs/setup/">octopress manual</a> and happy blogging.</p>
-]]></content>
-  </entry>
+
+
+
+
+
+
   
-  <entry>
-    <title type="html"><![CDATA[Using Rake]]></title>
-    <link href="http://kraeuschen.github.com/blog/2013/01/03/using-rake/"/>
-    <updated>2013-01-03T00:00:00+01:00</updated>
-    <id>http://kraeuschen.github.com/blog/2013/01/03/using-rake</id>
-    <content type="html"><![CDATA[<p>You can use rake for creating sites and posts. This file ist adopted from <a href="http://jekyllbootstrap.com">jekyll-boostrap</a>.</p>
 
-<h2>Starting server</h2>
 
-<pre><code>rake preview
-</code></pre>
+<time datetime="2013-01-09T02:00:00+01:00" pubdate data-updated="true">Jan 9<span>th</span>, 2013</time>
+      
 
-<h2>Create page</h2>
-
-<pre><code>rake page name="about.md"
-</code></pre>
-
-<p>or</p>
-
-<pre><code>rake page name="about/index.html"
-</code></pre>
-
-<h2>Create a post</h2>
-
-<pre><code>rake post title="A Title" [date="2012-02-09"]
-</code></pre>
-]]></content>
-  </entry>
+<span class="categories">
   
-  <entry>
-    <title type="html"><![CDATA[Tags In Jekyll]]></title>
-    <link href="http://kraeuschen.github.com/blog/2013/01/03/tags-in-jekyll/"/>
-    <updated>2013-01-03T00:00:00+01:00</updated>
-    <id>http://kraeuschen.github.com/blog/2013/01/03/tags-in-jekyll</id>
-    <content type="html"><![CDATA[<p><strong>Notice:</strong> Github doesn&#8217;t support jekyll plugins.</p>
-
-<h2>Using Tags</h2>
-
-<p>Add tags on frontmatter:</p>
-
-<pre><code>tags: jekyll code
-</code></pre>
-
-<p>Create two files:</p>
-
-<pre><code>_layouts/tag_index.html
-</code></pre>
-
-<p>and</p>
-
-<pre><code>_plugins/_tag_gen.rb
-</code></pre>
-
-<p>In the tag_index file put:</p>
-
-<pre><code>---
-layout: default
----
-&lt;h2 class="post_title"&gt;Tags In Jekyll&lt;/h2&gt;
-&lt;ul&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;/ul&gt;
-</code></pre>
-
-<p>In the tag_gen file. put this:</p>
-
-<pre><code>module Jekyll
-  class TagIndex &lt; Page
-    def initialize(site, base, dir, tag)
-      @site = site
-      @base = base
-      @dir = dir
-      @name = 'index.html'
-      self.process(@name)
-      self.read_yaml(File.join(base, '_layouts'), 'tag_index.html')
-      self.data['tag'] = tag
-      tag_title_prefix = site.config['tag_title_prefix'] || 'Posts Tagged &amp;ldquo;'
-      tag_title_suffix = site.config['tag_title_suffix'] || '&amp;rdquo;'
-      self.data['title'] = "#{tag_title_prefix}#{tag}#{tag_title_suffix}"
-    end
-  end
-  class TagGenerator &lt; Generator
-    safe true
-    def generate(site)
-      if site.layouts.key? 'tag_index'
-        dir = site.config['tag_dir'] || 'tag'
-        site.tags.keys.each do |tag|
-          write_tag_index(site, File.join(dir, tag), tag)
-        end
-      end
-    end
-    def write_tag_index(site, dir, tag)
-      index = TagIndex.new(site, site.source, dir, tag)
-      index.render(site.layouts, site.site_payload)
-      index.write(site.dest)
-      site.pages &lt;&lt; index
-    end
-  end
-end
-</code></pre>
-
-<h2>The magic happens</h2>
-
-<p>Jekyll needs a restart, if already running. After this, it creates new index files on _site/tags folder.</p>
-
-<p>For github we need to commit this subdir.</p>
-]]></content>
-  </entry>
+    <a class='category' href='/blog/categories/coding/'>coding</a>
   
-  <entry>
-    <title type="html"><![CDATA[How to setup an twitter bootstrap with jekyll]]></title>
-    <link href="http://kraeuschen.github.com/blog/2013/01/02/bootstrapping-github-pages-with-jekyll/"/>
-    <updated>2013-01-02T00:00:00+01:00</updated>
-    <id>http://kraeuschen.github.com/blog/2013/01/02/bootstrapping-github-pages-with-jekyll</id>
-    <content type="html"><![CDATA[<p>Twitter Bootstrap is a nice thing, but also the reason, why i couldn&#8217;t use jekyll-bootstrap and did all the stuff recursivly on my own.</p>
+</span>
 
-<p><strong> Spoiler </strong> The javascript files of bootstrap leadings to a &#8220;page could not be rendered&#8221; error on github.
-I guess the reason are comments in the js files, but i hasn&#8217;t checked it.</p>
 
-<h2>Download bootstrap</h2>
+      
 
-<p>So go to the <a href="http://twitter.github.com/bootstrap/">bootstrap homepage</a> and download the latest version.
-You should unpack the file and copy all data into a dir called assets. Then remove all non-minifed js files and everything
-works fine after pushing your commit.</p>
 
-<h2>Change pathes on your layout</h2>
 
-<p>Now its time to change your layout file and add the bootstrap css/js files. Use the grid-system if you want for all pages.</p>
 
-<pre><code>&lt;link href="http://kraeuschen.github.com/assets/css/bootstrap.css" rel="stylesheet"&gt;
-&lt;link href="http://kraeuschen.github.com/assets/css/docs.css" rel="stylesheet"&gt;
-&lt;link href="http://kraeuschen.github.com/assets/css/bootstrap-responsive.css" rel="stylesheet"&gt;
+<span class="tags">
+    Tags :  <a href="/blog/tags/jekyll" rel="tooltip" title="View posts tagged with &quot;jekyll&quot;"><span class="label label-info">jekyll</span></a>     <a href="/blog/tags/octopress" rel="tooltip" title="View posts tagged with &quot;octopress&quot;"><span class="label label-info">octopress</span></a>     <a href="/blog/tags/plugin" rel="tooltip" title="View posts tagged with &quot;plugin&quot;"><span class="label label-info">plugin</span></a>   
+</span>
 
-&lt;div class="container"&gt;&lt;/div&gt;
 
-&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
-&lt;script src="http://kraeuschen.github.com/assets/js/bootstrap.min.js"&gt;&lt;/script&gt;
-</code></pre>
-
-<p>Don&#8217;t forget using the right jquery version.</p>
-]]></content>
-  </entry>
+    </p>
+    
+      <div class="sharing">
   
-  <entry>
-    <title type="html"><![CDATA[How to setup an github based blog]]></title>
-    <link href="http://kraeuschen.github.com/blog/2013/01/01/setup-github-pages/"/>
-    <updated>2013-01-01T00:00:00+01:00</updated>
-    <id>http://kraeuschen.github.com/blog/2013/01/01/setup-github-pages</id>
-    <content type="html"><![CDATA[<h2>Create repo</h2>
-
-<p>Go to the Github Dashboard and create a new repository named USERNAME.github.com
-It has to be exactly the same name as your username.</p>
-
-<p>You can use the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> with templates
-or setup an <a href="https://help.github.com/articles/creating-project-pages-manually">page manually</a>.</p>
-
-<p>I used the page generator for the beginnin and removed all content except the index.html</p>
-
-<h2>Setup jekyll structure</h2>
-
-<p>Follow the instructions on the <a href="https://help.github.com/articles/using-jekyll-with-pages">github manual</a>.</p>
-
-<p>You will need to install some gems on your machine and setup a <a href="https://github.com/mojombo/jekyll/wiki/usage">directory structure</a></p>
-
-<p>Change the _config.yml and set some <a href="https://github.com/mojombo/jekyll/wiki/Configuration">config vars</a>:</p>
-
-<pre><code>auto: true
-pygments: true
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-markdown: rdiscount
-permalink: /:year/:month/:day/:title
-rdiscount extensions: [smart]
-</code></pre>
-
-<p>If you run</p>
-
-<pre><code>jekyll --server
-</code></pre>
-
-<p>it spawns an webserver on http://0.0.0.0:4000/.</p>
-
-<h2>Using markdown</h2>
-
-<p>Set your markdown engine in your _config.yml.</p>
-
-<p>Jekyll will parse .md files and creates html. You can add posts in the _posts directory,
-with your permalink-scheme.</p>
-
-<p>e.g create and file on posts/2013-01-01-setup-github-pages.md with content.</p>
-
-<pre><code>This is a test post writen in markdown. To learn more about markdown check
-out the [documentation](http://daringfireball.net/projects/markdown/).
-</code></pre>
-
-<p>See the result on http://0.0.0.0:4000/2013/01/01/setup-github-pages/</p>
-
-<p>This is a test post writen in markdown. To learn more about markdown check
-out the <a href="http://daringfireball.net/projects/markdown/">documentation</a>.</p>
-]]></content>
-  </entry>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kraeuschen.github.com/blog/2013/01/09/adding-the-tags-plugin-to-octopress/" data-via="kraeuschen" data-counturl="http://kraeuschen.github.com/blog/2013/01/09/adding-the-tags-plugin-to-octopress/" >Tweet</a>
   
-</feed>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/04/using-octopress/" title="Previous Post: Using Octopress">&laquo; Using Octopress</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/09/adding-the-tags-plugin-to-octopress/">Adding the Tags Plugin to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/04/using-octopress/">Using Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/03/using-rake/">Using Rake</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/03/tags-in-jekyll/">Tags In Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/02/bootstrapping-github-pages-with-jekyll/">How to setup an twitter bootstrap with jekyll</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/kraeuschen">@kraeuschen</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'kraeuschen',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("kraeuschen", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/kraeuschen" class="twitter-follow-button" data-show-count="false">Follow @kraeuschen</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/kraeuschen?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jan Krause -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

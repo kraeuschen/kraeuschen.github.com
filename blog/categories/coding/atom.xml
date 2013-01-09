@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Octopress blog]]></title>
   <link href="http://kraeuschen.github.com/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://kraeuschen.github.com/"/>
-  <updated>2013-01-09T01:34:03+01:00</updated>
+  <updated>2013-01-09T03:09:55+01:00</updated>
   <id>http://kraeuschen.github.com/</id>
   <author>
     <name><![CDATA[Jan Krause]]></name>
@@ -12,6 +12,304 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Adding the Tags Plugin to Octopress]]></title>
+    <link href="http://kraeuschen.github.com/blog/2013/01/09/adding-the-tags-plugin-to-octopress/"/>
+    <updated>2013-01-09T02:00:00+01:00</updated>
+    <id>http://kraeuschen.github.com/blog/2013/01/09/adding-the-tags-plugin-to-octopress</id>
+    <content type="html"><![CDATA[<p>This is an incomplete guide howto install the tags plugin with octopress.</p>
+
+<p>There are some differences between this version and the raw version.</p>
+
+<h2>Set layout for tag index page</h2>
+
+<p>You have to create the tag_index.html on the source branch in the source/_layout directory.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;h2&gt;&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="ss">layout</span><span class="p">:</span> <span class="n">page</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;h2&gt;footer: false&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;blog-archives&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;category&quot;</span><span class="o">&gt;</span>
+</span><span class='line'><span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">post</span> <span class="k">in</span> <span class="n">site</span><span class="o">.</span><span class="n">posts</span> <span class="sx">%}</span>
+</span><span class='line'><span class="sx">    {% for tag in post.tags %}</span>
+</span><span class='line'>        <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">tag</span> <span class="o">==</span> <span class="n">page</span><span class="o">.</span><span class="n">tag</span> <span class="sx">%}</span>
+</span><span class='line'><span class="sx">            {% capture this_year %}</span><span class="p">{{</span> <span class="n">post</span><span class="o">.</span><span class="n">date</span> <span class="o">|</span> <span class="ss">date</span><span class="p">:</span> <span class="s2">&quot;%Y&quot;</span> <span class="p">}}{</span><span class="o">%</span> <span class="n">endcapture</span> <span class="sx">%}</span>
+</span><span class='line'><span class="sx">            {% unless year == this_year %}</span>
+</span><span class='line'>            <span class="p">{</span><span class="o">%</span> <span class="n">assign</span> <span class="n">year</span> <span class="o">=</span> <span class="n">this_year</span> <span class="sx">%}</span>
+</span><span class='line'><span class="sx">            &lt;h2&gt;{{ year }</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h2&gt;</span>
+</span><span class='line'><span class="sr">            {% endunless %}</span>
+</span><span class='line'><span class="sr">            &lt;article&gt;</span>
+</span><span class='line'><span class="sr">                {% include archive_post.html %}</span>
+</span><span class='line'><span class="sr">            &lt;/</span><span class="n">article</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="sx">%}</span>
+</span><span class='line'><span class="sx">    {% endfor %}</span>
+</span><span class='line'><span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Create a new plugin</h2>
+
+<p>Again create an tag_generator.rb file in the plugins dir with this content:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Jekyll</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  # The TagIndex class creates a single index page for the specified tag.</span>
+</span><span class='line'><span class="sr">  class TagIndex &amp;lt; Page&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">dir</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+</span><span class='line'>  <span class="vi">@site</span> <span class="o">=</span> <span class="n">site</span>
+</span><span class='line'>  <span class="vi">@base</span> <span class="o">=</span> <span class="n">base</span>
+</span><span class='line'>  <span class="vi">@dir</span> <span class="o">=</span> <span class="n">dir</span>
+</span><span class='line'>  <span class="vi">@name</span> <span class="o">=</span> <span class="s1">&#39;index.html&#39;</span>
+</span><span class='line'>  <span class="nb">self</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="vi">@name</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">self</span><span class="o">.</span><span class="n">read_yaml</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="s1">&#39;_layouts&#39;</span><span class="p">),</span> <span class="s1">&#39;tag_index.html&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">self</span><span class="o">.</span><span class="n">data</span><span class="o">[</span><span class="s1">&#39;tag&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="n">tag</span>
+</span><span class='line'>  <span class="n">tag_title_prefix</span> <span class="o">=</span> <span class="n">site</span><span class="o">.</span><span class="n">config</span><span class="o">[</span><span class="s1">&#39;tag_title_prefix&#39;</span><span class="o">]</span> <span class="o">||</span> <span class="s1">&#39;Posts Tagged &amp;amp;ldquo;&#39;</span>
+</span><span class='line'>  <span class="n">tag_title_suffix</span> <span class="o">=</span> <span class="n">site</span><span class="o">.</span><span class="n">config</span><span class="o">[</span><span class="s1">&#39;tag_title_suffix&#39;</span><span class="o">]</span> <span class="o">||</span> <span class="s1">&#39;&amp;amp;rdquo;&#39;</span>
+</span><span class='line'>  <span class="nb">self</span><span class="o">.</span><span class="n">data</span><span class="o">[</span><span class="s1">&#39;title&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">tag_title_prefix</span><span class="si">}#{</span><span class="n">tag</span><span class="si">}#{</span><span class="n">tag_title_suffix</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  # Jekyll hook - the generate method is called by jekyll, and generates all of the tag pages.</span>
+</span><span class='line'><span class="sr">  class TagGenerator &amp;lt; Generator&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">safe</span> <span class="kp">true</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">site</span><span class="o">.</span><span class="n">layouts</span><span class="o">.</span><span class="n">key?</span> <span class="s1">&#39;tag_index&#39;</span>
+</span><span class='line'>    <span class="n">dir</span> <span class="o">=</span> <span class="n">site</span><span class="o">.</span><span class="n">config</span><span class="o">[</span><span class="s1">&#39;tag_dir&#39;</span><span class="o">]</span> <span class="o">||</span> <span class="s1">&#39;tag&#39;</span>
+</span><span class='line'>    <span class="n">site</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">tag</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">write_tag_index</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir</span><span class="p">,</span> <span class="n">tag</span><span class="p">),</span> <span class="n">tag</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">write_tag_index</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">dir</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">index</span> <span class="o">=</span> <span class="no">TagIndex</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">site</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">dir</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">index</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">site</span><span class="o">.</span><span class="n">layouts</span><span class="p">,</span> <span class="n">site</span><span class="o">.</span><span class="n">site_payload</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">index</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">site</span><span class="o">.</span><span class="n">dest</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">site</span><span class="o">.</span><span class="n">pages</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">index</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>You have to set the tag_dir var in the _config.yml</p>
+
+<pre><code>tag_dir: blog/tags
+</code></pre>
+
+<h2>Include Tags to posts</h2>
+
+<h3>First we create an new file on source/_includes/post/tags.html</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">post</span><span class="o">.</span><span class="n">tags</span> <span class="sx">%}</span>
+</span><span class='line'><span class="sx">{% assign tags = post.tags %}</span>
+</span><span class='line'><span class="p">{</span><span class="o">%</span> <span class="k">elsif</span> <span class="n">page</span><span class="o">.</span><span class="n">tags</span> <span class="sx">%}</span>
+</span><span class='line'><span class="sx">{% assign tags = page.tags %}</span>
+</span><span class='line'><span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="sx">%}&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sx">&lt;p&gt;{% if tags %}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;tags&quot;</span><span class="o">&gt;&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;Tags : {% for tag in tags %} &amp;lt;a href=&quot;http:/</span><span class="o">/</span><span class="n">kraeuschen</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">tags</span><span class="o">/</span><span class="p">{{</span> <span class="n">tag</span> <span class="p">}}</span><span class="s2">&quot; rel=&quot;</span><span class="n">tooltip</span><span class="s2">&quot; title=&quot;</span><span class="no">View</span> <span class="n">posts</span> <span class="n">tagged</span> <span class="n">with</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">quot</span><span class="p">;{{</span> <span class="n">tag</span> <span class="p">}}</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">quot</span><span class="p">;</span><span class="s2">&quot;&amp;gt;&amp;lt;span class=&quot;</span><span class="n">label</span> <span class="n">label</span><span class="o">-</span><span class="n">info</span><span class="s2">&quot;&amp;gt;{{ tag }}&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;  {% if forloop.last != true %} {% endif %} {% endfor %}</span>
+</span><span class='line'><span class="s2">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="s2">&lt;p&gt;&lt;/span&gt;</span>
+</span><span class='line'><span class="s2">{% endif %}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Its important to know that we need have to check if we have an page open or we currently loops
+in a array. In our case page.posts would we enough, but maybe you will try the include on an index
+file too.</p>
+
+<h3>Add the include to the  source/_layouts/post.html</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p class=&quot;meta&quot;&gt;</span>
+</span><span class='line'><span class="sr">  {% include post/</span><span class="n">author</span><span class="o">.</span><span class="n">html</span> <span class="sx">%}</span>
+</span><span class='line'><span class="sx">  {% include post/date.html %}</span><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">updated</span> <span class="sx">%}{{ updated }</span><span class="p">}{</span><span class="o">%</span> <span class="k">else</span> <span class="sx">%}{{ time }</span><span class="p">}{</span><span class="o">%</span> <span class="n">endif</span> <span class="sx">%}</span>
+</span><span class='line'><span class="sx">  {% include post/categories.html %}</span>
+</span><span class='line'>  <span class="p">{</span><span class="o">%</span> <span class="kp">include</span> <span class="n">post</span><span class="o">/</span><span class="n">tags</span><span class="o">.</span><span class="n">html</span> <span class="o">%</span><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>At last update Sass file on sass/partials/_blog.scss</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">article</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">...&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">footer</span> <span class="err">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;...</span>
+</span><span class='line'><span class="o">.</span><span class="n">byline</span> <span class="o">+</span> <span class="n">time</span><span class="o">:</span><span class="n">before</span><span class="o">,</span> <span class="n">time</span> <span class="o">+</span><span class="n">time</span><span class="o">:</span><span class="n">before</span><span class="o">,</span> <span class="o">.</span><span class="n">comments</span><span class="o">:</span><span class="n">before</span><span class="o">,</span> <span class="o">.</span><span class="n">byline</span> <span class="o">~</span> <span class="o">.</span><span class="n">categories</span><span class="o">:</span><span class="n">before</span><span class="o">,</span> <span class="o">.</span><span class="n">byline</span> <span class="o">~</span> <span class="o">.</span><span class="n">tags</span><span class="o">:</span><span class="n">before</span> <span class="err">{</span>
+</span><span class='line'>  <span class="o">@</span><span class="n">extend</span> <span class="o">.</span><span class="n">separator</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nt">code</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>  <span class="err">}</span>
+</span><span class='line'><span class="err">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p></blockquote>
+
+<p>Do not forget to run</p>
+
+<pre><code>rake generate
+</code></pre>
+
+<p>before trying</p>
+
+<pre><code>rake preview
+</code></pre>
+
+<p>because it has to change all existing posts.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Octopress]]></title>
+    <link href="http://kraeuschen.github.com/blog/2013/01/04/using-octopress/"/>
+    <updated>2013-01-04T12:17:00+01:00</updated>
+    <id>http://kraeuschen.github.com/blog/2013/01/04/using-octopress</id>
+    <content type="html"><![CDATA[<p>After knowing, that github doesn't support jekyll plugin and copying the tags
+dir from _site to main directory before each deploy, i was looking for an
+idea to solve this problem.</p>
+
+<p>My idea was to create an raw branch for all jekyll based files und plugins and
+another branch with the content of the completly rendered page, which is rendered
+in the _site folder.</p>
+
+<p>By Extending the Rakefile i could make an deploy command, which pushes the
+_site content to the master branch. Errors like the Twitter Boostrap thing could
+be avoided by using an .nojekyll file on this branch.</p>
+
+<p>But then i found octopress, which exactly works this way and comes up with
+a lot of cool plugins.</p>
+
+<p>Read the <a href="http://octopress.org/docs/setup/">octopress manual</a> and happy blogging.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Using Rake]]></title>
@@ -73,6 +371,18 @@ layout: default
 ---
 &lt;h2 class="post_title"&gt;Category: coding&lt;/h2&gt;
 &lt;ul&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -179,64 +489,6 @@ works fine after pushing your commit.</p>
 </code></pre>
 
 <p>Don't forget using the right jquery version.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How to setup an github based blog]]></title>
-    <link href="http://kraeuschen.github.com/blog/2013/01/01/setup-github-pages/"/>
-    <updated>2013-01-01T00:00:00+01:00</updated>
-    <id>http://kraeuschen.github.com/blog/2013/01/01/setup-github-pages</id>
-    <content type="html"><![CDATA[<h2>Create repo</h2>
-
-<p>Go to the Github Dashboard and create a new repository named USERNAME.github.com
-It has to be exactly the same name as your username.</p>
-
-<p>You can use the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> with templates
-or setup an <a href="https://help.github.com/articles/creating-project-pages-manually">page manually</a>.</p>
-
-<p>I used the page generator for the beginnin and removed all content except the index.html</p>
-
-<h2>Setup jekyll structure</h2>
-
-<p>Follow the instructions on the <a href="https://help.github.com/articles/using-jekyll-with-pages">github manual</a>.</p>
-
-<p>You will need to install some gems on your machine and setup a <a href="https://github.com/mojombo/jekyll/wiki/usage">directory structure</a></p>
-
-<p>Change the _config.yml and set some <a href="https://github.com/mojombo/jekyll/wiki/Configuration">config vars</a>:</p>
-
-<pre><code>auto: true
-pygments: true
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-markdown: rdiscount
-permalink: /:year/:month/:day/:title
-rdiscount extensions: [smart]
-</code></pre>
-
-<p>If you run</p>
-
-<pre><code>jekyll --server
-</code></pre>
-
-<p>it spawns an webserver on http://0.0.0.0:4000/.</p>
-
-<h2>Using markdown</h2>
-
-<p>Set your markdown engine in your _config.yml.</p>
-
-<p>Jekyll will parse .md files and creates html. You can add posts in the _posts directory,
-with your permalink-scheme.</p>
-
-<p>e.g create and file on posts/2013-01-01-setup-github-pages.md with content.</p>
-
-<pre><code>This is a test post writen in markdown. To learn more about markdown check
-out the [documentation](http://daringfireball.net/projects/markdown/).
-</code></pre>
-
-<p>See the result on http://0.0.0.0:4000/2013/01/01/setup-github-pages/</p>
-
-<p>This is a test post writen in markdown. To learn more about markdown check
-out the <a href="http://daringfireball.net/projects/markdown/">documentation</a>.</p>
 ]]></content>
   </entry>
   

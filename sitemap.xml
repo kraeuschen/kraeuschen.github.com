@@ -20,15 +20,21 @@
     </url>
     <url>
         <loc>http://kraeuschen.github.com/blog/2013/01/04/using-octopress/</loc>
-        <lastmod>2013-01-09T01:22:00+01:00</lastmod>
+        <lastmod>2013-01-09T01:57:21+01:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://kraeuschen.github.com/blog/2013/01/09/adding-the-tags-plugin-to-octopress/
+        </loc>
+        <lastmod>2013-01-09T03:09:55+01:00</lastmod>
     </url>
     <url>
         <loc>http://kraeuschen.github.com/blog/archives/</loc>
-        <lastmod>2013-01-09T00:33:00+01:00</lastmod>
+        <lastmod>2013-01-09T03:09:55+01:00</lastmod>
     </url>
     <url>
         <loc>http://kraeuschen.github.com/</loc>
-        <lastmod>2013-01-09T00:33:00+01:00</lastmod>
+        <lastmod>2013-01-09T03:09:55+01:00</lastmod>
     </url>
     <url>
         <loc>http://kraeuschen.github.com/robots.txt</loc>

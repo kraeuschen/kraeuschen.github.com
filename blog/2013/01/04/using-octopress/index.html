@@ -10,8 +10,7 @@
 
   
   <meta name="description" content="After knowing, that github doesn&#8217;t support jekyll plugin and copying the tags
-dir from _site to main directory.
-">
+dir from _site to main directory before each deploy, i was &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,7 +92,21 @@ dir from _site to main directory.
 
 
 <div class="entry-content"><p>After knowing, that github doesn&#8217;t support jekyll plugin and copying the tags
-dir from _site to main directory.</p>
+dir from _site to main directory before each deploy, i was looking for an
+idea to solve this problem.</p>
+
+<p>My idea was to create an raw branch for all jekyll based files und plugins and
+another branch with the content of the completly rendered page, which is rendered
+in the _site folder.</p>
+
+<p>By Extending the Rakefile i could make an deploy command, which pushes the
+_site content to the master branch. Errors like the Twitter Boostrap thing could
+be avoided by using an .nojekyll file on this branch.</p>
+
+<p>But then i found octopress, which exactly works this way and comes up with
+a lot of cool plugins.</p>
+
+<p>Read the <a href="http://octopress.org/docs/setup/">octopress manual</a> and happy blogging.</p>
 </div>
 
 
@@ -119,6 +132,12 @@ dir from _site to main directory.</p>
 <time datetime="2013-01-04T12:17:00+01:00" pubdate data-updated="true">Jan 4<span>th</span>, 2013</time>
       
 
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/coding/'>coding</a>
+  
+</span>
+
 
       
 
@@ -126,7 +145,7 @@ dir from _site to main directory.</p>
 
 
 <span class="tags">
-    Tags : 
+    Tags :  <a href="/blog/tags/jekyll" rel="tooltip" title="View posts tagged with &quot;jekyll&quot;"><span class="label label-info">jekyll</span></a>     <a href="/blog/tags/octopress" rel="tooltip" title="View posts tagged with &quot;octopress&quot;"><span class="label label-info">octopress</span></a>   
 </span>
 
 
@@ -146,6 +165,8 @@ dir from _site to main directory.</p>
         <a class="basic-alignment left" href="/blog/2013/01/03/using-rake/" title="Previous Post: Using Rake">&laquo; Using Rake</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/01/09/adding-the-tags-plugin-to-octopress/" title="Next Post: Adding the Tags Plugin to Octopress">Adding the Tags Plugin to Octopress &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -157,6 +178,10 @@ dir from _site to main directory.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/09/adding-the-tags-plugin-to-octopress/">Adding the Tags Plugin to Octopress</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/01/04/using-octopress/">Using Octopress</a>
@@ -172,10 +197,6 @@ dir from _site to main directory.</p>
     
       <li class="post">
         <a href="/blog/2013/01/02/bootstrapping-github-pages-with-jekyll/">How to setup an twitter bootstrap with jekyll</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/01/01/setup-github-pages/">How to setup an github based blog</a>
       </li>
     
   </ul>
