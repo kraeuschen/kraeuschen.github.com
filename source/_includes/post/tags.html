@@ -1,0 +1,11 @@
+{% if post.tags %}
+{% assign tags = post.tags %}
+{% elsif page.tags %}
+{% assign tags = page.tags %}
+{% endif %}
+
+{% if tags %}
+<span class="tags">
+    Tags : {% for tag in tags %} <a href="/blog/tags/{{ tag }}" rel="tooltip" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="label label-info">{{ tag }}</span></a>  {% if forloop.last != true %} {% endif %} {% endfor %}
+</span>
+{% endif %}
