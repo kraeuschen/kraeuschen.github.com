@@ -2,33 +2,33 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://kraeuschen.github.com/blog/2013/01/01/setup-github-pages/</loc>
-        <lastmod>2013-01-04T12:21:51+01:00</lastmod>
+        <lastmod>2013-01-09T01:22:00+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://kraeuschen.github.com/blog/2013/01/02/bootstrapping-github-pages-with-jekyll/
         </loc>
-        <lastmod>2013-01-04T12:21:51+01:00</lastmod>
+        <lastmod>2013-01-09T01:22:00+01:00</lastmod>
     </url>
     <url>
         <loc>http://kraeuschen.github.com/blog/2013/01/03/tags-in-jekyll/</loc>
-        <lastmod>2013-01-04T12:21:51+01:00</lastmod>
+        <lastmod>2013-01-09T01:22:00+01:00</lastmod>
     </url>
     <url>
         <loc>http://kraeuschen.github.com/blog/2013/01/03/using-rake/</loc>
-        <lastmod>2013-01-04T12:21:51+01:00</lastmod>
+        <lastmod>2013-01-09T01:22:00+01:00</lastmod>
     </url>
     <url>
         <loc>http://kraeuschen.github.com/blog/2013/01/04/using-octopress/</loc>
-        <lastmod>2013-01-04T12:36:29+01:00</lastmod>
+        <lastmod>2013-01-09T01:22:00+01:00</lastmod>
     </url>
     <url>
         <loc>http://kraeuschen.github.com/blog/archives/</loc>
-        <lastmod>2013-01-04T12:36:29+01:00</lastmod>
+        <lastmod>2013-01-09T00:33:00+01:00</lastmod>
     </url>
     <url>
         <loc>http://kraeuschen.github.com/</loc>
-        <lastmod>2013-01-04T12:36:29+01:00</lastmod>
+        <lastmod>2013-01-09T00:33:00+01:00</lastmod>
     </url>
     <url>
         <loc>http://kraeuschen.github.com/robots.txt</loc>

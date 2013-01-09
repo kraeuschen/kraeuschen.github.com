@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Octopress blog]]></title>
   <link href="http://kraeuschen.github.com/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://kraeuschen.github.com/"/>
-  <updated>2013-01-08T23:37:48+01:00</updated>
+  <updated>2013-01-09T01:34:03+01:00</updated>
   <id>http://kraeuschen.github.com/</id>
   <author>
     <name><![CDATA[Jan Krause]]></name>
@@ -73,19 +73,33 @@ layout: default
 ---
 &lt;h2 class="post_title"&gt;Category: coding&lt;/h2&gt;
 &lt;ul&gt;
-  {.% for post in site.posts %}
-  {.% for tag in post.tags %}
-  {.% if tag == page.tag %}
-  &lt;li class="archive_list"&gt;
-    &lt;time style="color:#666;font-size:11px;" datetime=''&gt;&lt;/time&gt; &lt;a class="archive_list_article_link" href=''&gt;&lt;/a&gt;
-    &lt;p class="summary"&gt;
-    &lt;ul class="tag_list"&gt;
-      
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  {.% endif %}
-  {.% endfor %}
-  {.% endfor %}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 &lt;/ul&gt;
 </code></pre>
 
